@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   APEX design tokens
+   Derived from brand assets: black wordmark, emerald app UI,
+   near-black green app background, LOLA's yellow antenna accent.
+------------------------------------------------------------------- */
+@theme {
+  /* Surfaces */
+  --color-cream: #faf8f2; /* page background */
+  --color-paper: #ffffff; /* cards */
+  --color-mist: #f0ede4; /* subtle alt surface */
+
+  /* Ink */
+  --color-ink: #101b15; /* near-black green, primary text */
+  --color-slate-soft: #4c5a52; /* secondary text */
+
+  /* Brand greens (from app UI) */
+  --color-pine: #0d1f17; /* dark sections, matches app background */
+  --color-leaf: #2e7d57; /* primary CTA, matches app buttons */
+  --color-leaf-deep: #245f43; /* CTA hover */
+  --color-sprout: #e6f0e9; /* tinted chip background */
+
+  /* LOLA accent */
+  --color-antenna: #f2c744; /* yellow — use sparingly */
+
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchored sections below the sticky nav */
+section[id] {
+  scroll-margin-top: 88px;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-antenna);
+  color: var(--color-ink);
+}
+
+/* ------------------------------------------------------------------
+   Scroll-reveal animation (driven by <Reveal />)
+   Subtle by design; disabled entirely for reduced-motion users.
+------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Gentle idle float for LOLA */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float {
+    animation: none;
+  }
+}
+
+/* Hide scrollbars on the screenshot carousel while keeping it scrollable */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
