@@ -18,27 +18,24 @@ type LaunchFormProps = {
   idPrefix: string;
 };
 
-/**
- * Main launch-list signup: name, email, school, student type.
- *
- * TODO(backend): connect this form to your email collection service.
- * Recommended options, roughly in order of effort:
- *  - Airtable form / Airtable API (fastest to set up)
- *  - Supabase: insert into a `waitlist` table via a Next.js route handler
- *  - ConvertKit / Beehiiv: POST to their subscribe API for email marketing
- * Replace the setTimeout in handleSubmit with your real request.
- */
+/** Main launch-list signup: name, email, school, student type. Posts to /api/waitlist, which forwards to Kit. */
 export default function LaunchForm({ dark = false, idPrefix }: LaunchFormProps) {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("submitting");
 
-    // TODO(backend): replace with a real POST, e.g.
-    // await fetch("/api/waitlist", { method: "POST", body: new FormData(event.currentTarget) });
-    await new Promise((resolve) => setTimeout(resolve, 600));
-    setStatus("success");
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        body: new FormData(event.currentTarget),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   const inputClasses = dark
@@ -146,6 +143,11 @@ export default function LaunchForm({ dark = false, idPrefix }: LaunchFormProps) 
         >
           Free to join. No spam, just launch updates and early access.
         </p>
+        {status === "error" ? (
+          <p role="alert" className="mt-3 text-center text-xs font-medium text-red-500">
+            Something went wrong. Please try again in a moment.
+          </p>
+        ) : null}
       </div>
     </form>
   );
