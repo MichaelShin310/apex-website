@@ -11,21 +11,34 @@ const REASONS = [
 ];
 
 /**
- * Contact form.
- *
- * TODO(backend): wire this to email. Easiest options:
- *  - Formspree / Web3Forms (no backend needed — swap the action URL in)
- *  - A Next.js route handler + Resend for transactional email
+ * Contact form. Posts directly to Web3Forms from the browser — their free
+ * tier requires client-side calls (server-to-server calls need a paid
+ * plan), and the access key is designed by Web3Forms to be public.
  */
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("submitting");
-    // TODO(backend): replace with a real POST request.
-    await new Promise((resolve) => setTimeout(resolve, 600));
-    setStatus("success");
+
+    try {
+      const formData = new FormData(event.currentTarget);
+      formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "");
+      formData.append("replyto", String(formData.get("email") ?? ""));
+      formData.append("subject", `APEX contact form: ${formData.get("reason")}`);
+
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      const body = await res.json();
+      if (!res.ok || !body.success) throw new Error("Request failed");
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   const inputClasses =
@@ -93,6 +106,11 @@ export default function ContactForm() {
         >
           {status === "submitting" ? "Sending…" : "Send Message"}
         </button>
+        {status === "error" ? (
+          <p role="alert" className="mt-3 text-xs font-medium text-red-500">
+            Something went wrong. Please try again in a moment.
+          </p>
+        ) : null}
       </div>
     </form>
   );
