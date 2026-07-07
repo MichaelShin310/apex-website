@@ -2,21 +2,24 @@
 
 import { useState, type FormEvent } from "react";
 
-/**
- * Campus ambassador interest form.
- *
- * TODO(backend): connect to your collection tool (Airtable base, Supabase
- * table, or a Google Form endpoint). Replace the setTimeout below.
- */
+/** Campus ambassador interest form. Posts to /api/ambassador, which forwards to Kit. */
 export default function AmbassadorForm() {
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("submitting");
-    // TODO(backend): replace with a real POST request.
-    await new Promise((resolve) => setTimeout(resolve, 600));
-    setStatus("success");
+
+    try {
+      const res = await fetch("/api/ambassador", {
+        method: "POST",
+        body: new FormData(event.currentTarget),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   const inputClasses =
@@ -84,6 +87,11 @@ export default function AmbassadorForm() {
         >
           {status === "submitting" ? "Sending…" : "Become a Campus Ambassador"}
         </button>
+        {status === "error" ? (
+          <p role="alert" className="mt-3 text-center text-xs font-medium text-red-400">
+            Something went wrong. Please try again in a moment.
+          </p>
+        ) : null}
       </div>
     </form>
   );
