@@ -40,8 +40,13 @@ export async function POST(request: Request) {
   });
 
   if (!kitRes.ok) {
-    console.error("Kit subscribe failed", kitRes.status, await kitRes.text());
-    return NextResponse.json({ error: "Signup failed." }, { status: 502 });
+    const kitBody = await kitRes.text();
+    console.error("Kit subscribe failed", kitRes.status, kitBody);
+    // TEMPORARY: surfacing Kit's raw error for debugging. Remove once signups are confirmed working.
+    return NextResponse.json(
+      { error: "Signup failed.", debug: { status: kitRes.status, body: kitBody, formIdLen: formId.length, apiKeyLen: apiKey.length } },
+      { status: 502 },
+    );
   }
 
   return NextResponse.json({ ok: true });
