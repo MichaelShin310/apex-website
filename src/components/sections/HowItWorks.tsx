@@ -16,7 +16,7 @@ const STEPS = [
   },
   {
     title: "Get your optimized week",
-    body: "APEX places study blocks in your peak-focus hours and protects the time that keeps you sane.",
+    body: "APEX places study blocks in your peak focus hours and protects the time that keeps you sane.",
     icon: (
       <path d="M8 3v3M16 3v3M4 8h16M5 5h14a1 1 0 0 1 1 1v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1zM9 14l2 2 4-4" />
     ),

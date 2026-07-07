@@ -9,7 +9,7 @@ const FLOW = [
   },
   {
     title: "LOLA reads what matters",
-    body: "Exams, essays, quizzes, due dates — pulled out automatically and organized by course.",
+    body: "Exams, essays, quizzes, due dates, all pulled out automatically and organized by course.",
   },
   {
     title: "APEX builds your schedule",
@@ -17,7 +17,7 @@ const FLOW = [
   },
   {
     title: "Your week adjusts with you",
-    body: "Plans change. APEX reshuffles around school, social life, and goals — so one surprise doesn't wreck the week.",
+    body: "Plans change. APEX reshuffles around school, social life, and goals, so one surprise doesn't wreck the week.",
   },
 ];
 
@@ -31,7 +31,7 @@ export default function Solution() {
               align="left"
               eyebrow="The solution"
               title="From syllabus chaos to one clear plan"
-              description="APEX does the planning work you keep putting off — then keeps doing it, all semester."
+              description="APEX does the planning work you keep putting off, then keeps doing it all semester."
             />
 
             <ol className="mt-10 space-y-6">

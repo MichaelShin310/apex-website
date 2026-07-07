@@ -20,7 +20,7 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-leaf opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-leaf" />
               </span>
-              Now in private beta — launch list open
+              Now in private beta · launch list open
             </p>
           </Reveal>
 
@@ -34,7 +34,7 @@ export default function Hero() {
           <Reveal delay={160}>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-soft">
               APEX turns your syllabi, deadlines, and goals into one smart weekly
-              plan — with room left for the gym, your friends, and your actual life.
+              plan, with room left for the gym, your friends, and your actual life.
               Guided by LOLA, your AI assistant.
             </p>
           </Reveal>
@@ -83,7 +83,7 @@ export default function Hero() {
               <div className="flex h-28 w-28 items-center justify-center rounded-full bg-paper p-4 shadow-[0_16px_40px_-12px_rgba(16,27,21,0.3)] ring-1 ring-ink/5 lg:h-32 lg:w-32">
                 <Image
                   src="/assets/lola-head.png"
-                  alt="LOLA, the APEX assistant mascot — a friendly white robot head with yellow-tipped antennae"
+                  alt="LOLA, the APEX assistant mascot, a friendly white robot head with yellow tipped antennae"
                   width={128}
                   height={128}
                   className="h-auto w-full"

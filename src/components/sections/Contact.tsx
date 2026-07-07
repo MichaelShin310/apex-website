@@ -6,9 +6,9 @@ import SectionHeading from "../SectionHeading";
 const CONTACT_EMAIL = "hello@joinapex.app";
 
 const SOCIALS = [
-  { label: "Instagram", href: "#", handle: "@apex.app" },
-  { label: "TikTok", href: "#", handle: "@apex.app" },
-  { label: "X / Twitter", href: "#", handle: "@apexapp" },
+  { label: "Instagram", href: "https://instagram.com/apexstudentapp", handle: "@apexstudentapp" },
+  { label: "TikTok", href: "https://tiktok.com/@apexstudentapp", handle: "@apexstudentapp" },
+  { label: "X / Twitter", href: "https://x.com/apexstudentapp", handle: "@apexstudentapp" },
 ];
 
 export default function Contact() {
@@ -40,10 +40,14 @@ export default function Contact() {
                   <ul className="mt-2 space-y-1.5">
                     {SOCIALS.map((social) => (
                       <li key={social.label}>
-                        {/* TODO: point these at real profiles before launch */}
-                        <a href={social.href} className="text-sm text-ink hover:text-leaf">
+                        <a
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-ink hover:text-leaf"
+                        >
                           <span className="font-semibold">{social.label}</span>
-                          <span className="text-slate-soft"> · {social.handle} (coming soon)</span>
+                          <span className="text-slate-soft"> · {social.handle}</span>
                         </a>
                       </li>
                     ))}

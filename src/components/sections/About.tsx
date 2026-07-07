@@ -20,15 +20,15 @@ export default function About() {
               still falling behind.
             </p>
             <p>
-              We tried everything — planners we abandoned by October, Notion setups that
+              We tried everything: planners we abandoned by October, Notion setups that
               took longer to maintain than the homework itself, calendar apps built for
-              people with 9-to-5s. Nothing understood the way a student week actually
+              people with 9 to 5 jobs. Nothing understood the way a student week actually
               works: irregular, social, and one surprise away from chaos.
             </p>
             <p>
               So we&apos;re building the tool we wanted. APEX exists so students can do
               well in school <em className="font-medium not-italic text-ink">and</em> have
-              a life — without spending Sunday nights doing damage control. That&apos;s
+              a life, without spending Sunday nights doing damage control. That&apos;s
               the whole mission.
             </p>
           </div>
@@ -44,7 +44,7 @@ export default function About() {
               className="h-7 w-7"
             />
             <p className="text-sm font-medium text-ink">
-              The APEX team — students, building for students.
+              The APEX team. Students, building for students.
             </p>
           </div>
         </Reveal>

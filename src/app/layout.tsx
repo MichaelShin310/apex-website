@@ -20,7 +20,7 @@ const siteUrl = "https://apex-website.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "APEX — The AI planner built for student life",
+    default: "APEX | The AI planner built for student life",
     template: "%s · APEX",
   },
   description:
@@ -38,21 +38,21 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "APEX",
-    title: "APEX — The AI planner built for student life",
+    title: "APEX | The AI planner built for student life",
     description:
-      "Upload your syllabus. Get a week that actually works. APEX balances school, social life, and goals — join the launch list for early access.",
+      "Upload your syllabus. Get a week that actually works. APEX balances school, social life, and goals. Join the launch list for early access.",
     images: [
       {
         url: "/assets/og.png",
         width: 1200,
         height: 630,
-        alt: "APEX — AI student life optimization app, with LOLA the assistant mascot",
+        alt: "APEX, the AI student life optimization app, with LOLA the assistant mascot",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "APEX — The AI planner built for student life",
+    title: "APEX | The AI planner built for student life",
     description:
       "Upload your syllabus. Get a week that actually works. Join the APEX launch list.",
     images: ["/assets/og.png"],

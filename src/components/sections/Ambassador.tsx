@@ -6,7 +6,7 @@ import SectionHeading from "../SectionHeading";
 const PERKS = [
   "First access to every new feature",
   "Direct line to the founding team",
-  "APEX merch and launch-event kits",
+  "APEX merch and launch event kits",
   "A real launch story for your resume",
 ];
 
@@ -21,7 +21,7 @@ export default function Ambassador() {
               dark
               eyebrow="Campus ambassadors"
               title="Bring APEX to your campus"
-              description="We're recruiting a small crew of students to launch APEX at their schools — the people friends already come to for how-do-you-stay-organized advice."
+              description="We're recruiting a small crew of students to launch APEX at their schools. The kind of people friends already ask for organization advice."
             />
 
             <ul className="mt-8 space-y-3">

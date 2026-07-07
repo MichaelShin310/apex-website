@@ -25,7 +25,7 @@ export default function Footer() {
             />
             <p className="mt-3 max-w-xs text-sm text-cream/60">
               The AI planner built for student life. School, goals, and a social
-              life — one schedule that fits it all.
+              life, one schedule that fits it all.
             </p>
           </div>
 

@@ -8,15 +8,15 @@ const AUDIENCES = [
   },
   {
     title: "High school students",
-    body: "APs, extracurriculars, college apps — organized before it gets overwhelming.",
+    body: "APs, extracurriculars, college apps, organized before it gets overwhelming.",
   },
   {
     title: "Student athletes",
-    body: "Practice and games are non-negotiable. APEX plans your studying around them.",
+    body: "Practice and games come first. APEX plans your studying around them.",
   },
   {
     title: "Working students",
-    body: "Shifts change weekly. Your study plan should change with them — automatically.",
+    body: "Shifts change weekly. Your study plan should change with them automatically.",
   },
   {
     title: "Chronic procrastinators",

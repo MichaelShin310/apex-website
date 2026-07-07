@@ -4,17 +4,17 @@ import SectionHeading from "../SectionHeading";
 const FEATURES = [
   {
     title: "AI syllabus scanner",
-    body: "Upload the PDF once. Every exam, essay, and quiz lands in your plan — no more decoding course policy.",
+    body: "Upload the PDF once. Every exam, essay, and quiz lands in your plan. No more decoding course policy.",
     icon: <path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM9 8h6M9 12h6M9 16h3" />,
   },
   {
     title: "Smart calendar builder",
-    body: "Classes, deadlines, and plans arranged into a week that flows — synced with the calendar you already use.",
+    body: "Classes, deadlines, and plans arranged into a week that flows, synced with the calendar you already use.",
     icon: <path d="M8 3v3M16 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1z" />,
   },
   {
     title: "Assignment & exam planning",
-    body: "Big deadlines get broken into small, scheduled steps — so finals week starts weeks before finals week.",
+    body: "Big deadlines get broken into small, scheduled steps, so finals week starts weeks before finals week.",
     icon: <path d="M9 11l3 3 8-8M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9" />,
   },
   {
@@ -39,7 +39,7 @@ const FEATURES = [
   },
   {
     title: "Personalized reminders",
-    body: "Nudges timed to when you'll act on them — not 47 notifications you swipe away.",
+    body: "Nudges timed to when you'll act on them, not 47 notifications you swipe away.",
     icon: <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M10.3 21a1.94 1.94 0 0 0 3.4 0" />,
   },
   {
@@ -56,7 +56,7 @@ export default function Features() {
         <SectionHeading
           eyebrow="Features"
           title="Everything a chaotic semester needs"
-          description="One app between your syllabus and your social life — doing the work a planner, a calendar, and a very organized friend would do."
+          description="One app between your syllabus and your social life, doing the work a planner, a calendar, and a very organized friend would do."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

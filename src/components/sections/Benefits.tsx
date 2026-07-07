@@ -4,7 +4,7 @@ import SectionHeading from "../SectionHeading";
 const BENEFITS = [
   "Always know what to do next",
   "Stop missing deadlines",
-  "Make time for friends — on purpose",
+  "Make time for friends on purpose",
   "Build habits that survive midterms",
   "Turn every syllabus into a real plan",
   "Feel less overwhelmed, week after week",

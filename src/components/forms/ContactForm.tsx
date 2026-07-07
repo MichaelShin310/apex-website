@@ -37,7 +37,7 @@ export default function ContactForm() {
       <div role="status" className="rounded-2xl border border-leaf/30 bg-sprout p-6 text-center">
         <p className="font-display text-lg font-semibold text-ink">Message sent.</p>
         <p className="mt-1 text-sm text-slate-soft">
-          Thanks for reaching out — we read everything and reply as fast as we can.
+          Thanks for reaching out. We read everything and reply as fast as we can.
         </p>
       </div>
     );

@@ -18,14 +18,14 @@ const PAINS = [
   },
   {
     title: "A life that won't pause",
-    body: "Work shifts, practice, club meetings, the gym, actual friends. School isn't the only thing on your calendar — it just acts like it.",
+    body: "Work shifts, practice, club meetings, the gym, actual friends. School isn't the only thing on your calendar. It just acts like it.",
     icon: (
       <path d="M12 21a9 9 0 1 0-9-9 9 9 0 0 0 9 9zM12 7v5l3 3" />
     ),
   },
   {
     title: "Busy, but not in control",
-    body: "You're doing something all day and still feel behind. That Sunday-night dread isn't a discipline problem — it's a planning problem.",
+    body: "You're doing something all day and still feel behind. That Sunday night dread isn't a discipline problem. It's a planning problem.",
     icon: (
       <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
     ),
@@ -39,7 +39,7 @@ export default function Problem() {
         <SectionHeading
           eyebrow="The problem"
           title="Student life is a scheduling problem no one taught you to solve"
-          description="You're managing five syllabi, a job, a social life, and your own goals — with tools built for office workers."
+          description="You're managing five syllabi, a job, a social life, and your own goals, all with tools built for office workers."
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2">

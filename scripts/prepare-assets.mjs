@@ -92,7 +92,7 @@ async function main() {
     <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
       <text x="90" y="330" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#101b15">The AI planner built for student life.</text>
       <text x="90" y="400" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#4c5a52">Upload your syllabus. Get a week that actually works.</text>
-      <text x="90" y="540" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#2e7d57">Join the launch list — early access opening soon</text>
+      <text x="90" y="540" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#2e7d57">Join the launch list. Early access opening soon</text>
     </svg>
   `);
 

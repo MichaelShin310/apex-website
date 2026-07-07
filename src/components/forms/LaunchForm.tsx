@@ -79,7 +79,7 @@ export default function LaunchForm({ dark = false, idPrefix }: LaunchFormProps) 
           type="text"
           required
           autoComplete="name"
-          placeholder="Jordan Rivera"
+          placeholder="Your Name"
           className={inputClasses}
         />
       </div>
@@ -144,7 +144,7 @@ export default function LaunchForm({ dark = false, idPrefix }: LaunchFormProps) 
             dark ? "text-cream/50" : "text-slate-soft/80"
           }`}
         >
-          Free to join. No spam — just launch updates and early access.
+          Free to join. No spam, just launch updates and early access.
         </p>
       </div>
     </form>
