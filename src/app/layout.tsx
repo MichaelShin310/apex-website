@@ -14,8 +14,8 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-// TODO: set this to your real production domain after deploying (e.g. https://joinapex.app)
-const siteUrl = "https://apex-website.vercel.app";
+// TODO: swap to a custom domain later (e.g. https://joinapex.app) and update here.
+const siteUrl = "https://apex-website-azure-chi.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
