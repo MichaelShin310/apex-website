@@ -1,17 +1,17 @@
 import { NextResponse } from "next/server";
 
 /**
- * Forwards campus ambassador applications to Kit. Reuses the same launch-list
- * form/API key (KIT_API_KEY, KIT_FORM_ID) so applicants land in the same
- * subscriber list, tagged with lead_type so they can be filtered separately
- * in Kit. Runs server-side so KIT_API_KEY never reaches the browser.
+ * Forwards campus ambassador applications to Kit's dedicated AMBASSADOR FORM
+ * (separate from the launch-list form, so it gets its own confirmation
+ * email and subscriber list rather than sharing the launch list's).
+ * Runs server-side so KIT_API_KEY never reaches the browser.
  */
 export async function POST(request: Request) {
   const apiKey = process.env.KIT_API_KEY?.trim();
-  const formId = process.env.KIT_FORM_ID?.trim();
+  const formId = process.env.KIT_AMBASSADOR_FORM_ID?.trim();
 
   if (!apiKey || !formId) {
-    console.error("Ambassador signup attempted before KIT_API_KEY / KIT_FORM_ID were configured.");
+    console.error("Ambassador signup attempted before KIT_API_KEY / KIT_AMBASSADOR_FORM_ID were configured.");
     return NextResponse.json({ error: "Not configured yet." }, { status: 500 });
   }
 
