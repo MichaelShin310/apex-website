@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
 
@@ -16,12 +17,25 @@ export default function Benefits() {
     <section id="benefits" className="bg-mist/60 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <SectionHeading
-            align="left"
-            eyebrow="What changes"
-            title="Less managing your life. More living it."
-            description="Features are what APEX does. This is what you get back."
-          />
+          <div>
+            <SectionHeading
+              align="left"
+              eyebrow="What changes"
+              title="Less managing your life. More living it."
+              description="Features are what APEX does. This is what you get back."
+            />
+            <Reveal delay={200}>
+              <div className="mt-10 hidden w-48 lg:block">
+                <Image
+                  src="/assets/lola-chillin.png"
+                  alt="LOLA sitting back and relaxing"
+                  width={447}
+                  height={560}
+                  className="h-auto w-full"
+                />
+              </div>
+            </Reveal>
+          </div>
 
           <div>
             <ul className="space-y-3">

@@ -44,9 +44,9 @@ export default function Lola() {
               {LOLA_LINES.map((line, index) => (
                 <Reveal key={line} delay={index * 110}>
                   <div className="flex items-start gap-3">
-                    <div className="mt-1 h-8 w-8 shrink-0 overflow-hidden rounded-full bg-cream p-1">
+                    <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full bg-cream p-1">
                       <Image
-                        src="/assets/lola-head.png"
+                        src="/assets/lola-head-solid.png"
                         alt=""
                         width={32}
                         height={32}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
@@ -57,6 +58,15 @@ export default function Faq() {
   return (
     <section id="faq" className="bg-mist/60 py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-5 sm:px-8">
+        <Reveal className="mb-6 flex justify-center">
+          <Image
+            src="/assets/lola-thinking.png"
+            alt="LOLA in a thinking pose with a question mark overhead"
+            width={245}
+            height={560}
+            className="h-auto w-20 sm:w-24"
+          />
+        </Reveal>
         <SectionHeading
           eyebrow="FAQ"
           title="Questions, answered"

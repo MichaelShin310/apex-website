@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PhoneFrame from "../PhoneFrame";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
@@ -52,7 +53,7 @@ export default function Solution() {
           </div>
 
           <Reveal delay={150} className="justify-self-center">
-            <div className="flex items-end gap-5">
+            <div className="relative flex items-end gap-5">
               <PhoneFrame
                 src="/assets/screen-chat.png"
                 alt="APEX chat screen where students message LOLA, the AI study optimizer"
@@ -65,6 +66,16 @@ export default function Solution() {
                 width={250}
                 className="rotate-2"
               />
+              {/* LOLA reading a syllabus at the corner of the phones */}
+              <div className="absolute -bottom-10 -left-10 w-24 sm:-left-14 sm:w-28">
+                <Image
+                  src="/assets/lola-reading.png"
+                  alt="LOLA reading a syllabus document"
+                  width={289}
+                  height={560}
+                  className="h-auto w-full drop-shadow-[0_12px_20px_rgba(16,27,21,0.15)]"
+                />
+              </div>
             </div>
           </Reveal>
         </div>

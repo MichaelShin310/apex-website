@@ -1,5 +1,16 @@
+import Image from "next/image";
 import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
+
+/** Faint background doodles from the brand icon set. Decorative only. */
+const DOODLES = [
+  { src: "/assets/icon-calendar.png", className: "left-[4%] top-[12%] w-16 -rotate-12" },
+  { src: "/assets/icon-flame.png", className: "right-[6%] top-[10%] w-14 rotate-12" },
+  { src: "/assets/icon-alarm.png", className: "left-[8%] bottom-[8%] w-16 rotate-6" },
+  { src: "/assets/icon-book.png", className: "right-[5%] bottom-[14%] w-20 -rotate-6" },
+  { src: "/assets/icon-pizza.png", className: "right-[30%] top-[4%] w-12 rotate-[20deg]" },
+  { src: "/assets/icon-dumbbell.png", className: "left-[30%] top-[6%] w-16 -rotate-[15deg]" },
+];
 
 const PAINS = [
   {
@@ -34,8 +45,22 @@ const PAINS = [
 
 export default function Problem() {
   return (
-    <section id="problem" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+    <section id="problem" className="relative overflow-hidden py-20 sm:py-28">
+      {/* scattered doodles, hidden on small screens to avoid clutter */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 hidden opacity-[0.07] md:block">
+        {DOODLES.map((doodle) => (
+          <Image
+            key={doodle.src}
+            src={doodle.src}
+            alt=""
+            width={160}
+            height={160}
+            className={`absolute h-auto ${doodle.className}`}
+          />
+        ))}
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="The problem"
           title="Student life is a scheduling problem no one taught you to solve"

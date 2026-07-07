@@ -14,6 +14,37 @@ import path from "node:path";
 const SRC = "assets-src";
 const OUT = "public/assets";
 
+/**
+ * LOLA pose art (from assets-src/processed, produced by scripts/remove_bg.py
+ * which strips the baked-in checkerboard background from AI-generated art).
+ */
+const LOLA_POSES = [
+  "lola-wave.png",
+  "lola-reading.png",
+  "lola-pointing.png",
+  "lola-celebrating.png",
+  "lola-thinking.png",
+  "lola-chillin.png",
+  "lola-flag.png",
+  "lola-head-solid.png",
+];
+
+/** Decorative doodle icons (also from assets-src/processed). */
+const DOODLE_ICONS = [
+  "icon-calendar.png",
+  "icon-check.png",
+  "icon-flame.png",
+  "icon-book.png",
+  "icon-dumbbell.png",
+  "icon-pizza.png",
+  "icon-alarm.png",
+  "icon-notebook.png",
+  "icon-coffee.png",
+  "icon-chat.png",
+  "icon-star.png",
+  "icon-bolt.png",
+];
+
 /** Phone screenshots: resize to 720px wide (2x the largest display size). */
 const SCREENSHOTS = [
   ["screen-login.png", "screen-login.png"],
@@ -59,6 +90,22 @@ async function main() {
     .png({ compressionLevel: 9 })
     .toFile(path.join(OUT, "lola-lockup.png"));
 
+  // LOLA poses: cap at 560px on the long edge (2x display size).
+  for (const name of LOLA_POSES) {
+    await sharp(path.join(SRC, "processed", name))
+      .resize(560, 560, { fit: "inside" })
+      .png({ compressionLevel: 9 })
+      .toFile(path.join(OUT, name));
+  }
+
+  // Doodle icons: small decorative use only.
+  for (const name of DOODLE_ICONS) {
+    await sharp(path.join(SRC, "processed", name))
+      .resize(160, 160, { fit: "inside" })
+      .png({ compressionLevel: 9 })
+      .toFile(path.join(OUT, name));
+  }
+
   // App screenshots.
   for (const [src, out] of SCREENSHOTS) {
     await sharp(path.join(SRC, src))
@@ -78,32 +125,13 @@ async function main() {
     .png()
     .toFile("src/app/apple-icon.png");
 
-  // Open Graph card (1200x630): cream background, logo + tagline + LOLA.
-  const logo = await sharp(path.join(SRC, "apex-logo.png"))
-    .resize(360, null, { fit: "inside" })
-    .toBuffer();
-  const lola = await sharp(path.join(SRC, "lola-head.png"))
-    .trim({ threshold: 10 })
-    .resize(300, null, { fit: "inside" })
-    .toBuffer();
-  const lolaMeta = await sharp(lola).metadata();
+  // Open Graph card (1200x630): the wide LOLA + phone illustration with the
+  // APEX wordmark composited top-left (the art itself carries no branding).
+  const logo = await sharp(path.join(SRC, "apex-logo.png")).toBuffer();
 
-  const taglineSvg = Buffer.from(`
-    <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
-      <text x="90" y="330" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="700" fill="#101b15">The AI planner built for student life.</text>
-      <text x="90" y="400" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#4c5a52">Upload your syllabus. Get a week that actually works.</text>
-      <text x="90" y="540" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#2e7d57">Join the launch list. Early access opening soon</text>
-    </svg>
-  `);
-
-  await sharp({
-    create: { width: 1200, height: 630, channels: 4, background: "#faf8f2" },
-  })
-    .composite([
-      { input: logo, left: 90, top: 120 },
-      { input: taglineSvg, left: 0, top: 0 },
-      { input: lola, left: 1200 - (lolaMeta.width ?? 300) - 80, top: 630 - (lolaMeta.height ?? 300) - 60 },
-    ])
+  await sharp(path.join(SRC, "LOLA - wide hero.png"))
+    .resize(1200, 630, { fit: "cover" })
+    .composite([{ input: logo, left: 930, top: 44 }])
     .png()
     .toFile(path.join(OUT, "og.png"));
 

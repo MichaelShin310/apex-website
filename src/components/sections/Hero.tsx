@@ -78,17 +78,15 @@ export default function Hero() {
               width={290}
               priority
             />
-            {/* LOLA peeking beside the phone */}
-            <div className="absolute -left-20 bottom-8 hidden animate-float sm:block lg:-left-24">
-              <div className="flex h-28 w-28 items-center justify-center rounded-full bg-paper p-4 shadow-[0_16px_40px_-12px_rgba(16,27,21,0.3)] ring-1 ring-ink/5 lg:h-32 lg:w-32">
-                <Image
-                  src="/assets/lola-head.png"
-                  alt="LOLA, the APEX assistant mascot, a friendly white robot head with yellow tipped antennae"
-                  width={128}
-                  height={128}
-                  className="h-auto w-full"
-                />
-              </div>
+            {/* LOLA waving beside the phone */}
+            <div className="absolute -left-24 bottom-0 hidden w-32 animate-float sm:block lg:-left-32 lg:w-40">
+              <Image
+                src="/assets/lola-wave.png"
+                alt="LOLA, the APEX assistant mascot, a friendly white robot waving hello"
+                width={324}
+                height={560}
+                className="h-auto w-full drop-shadow-[0_16px_28px_rgba(16,27,21,0.16)]"
+              />
             </div>
           </div>
         </Reveal>

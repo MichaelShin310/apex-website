@@ -12,12 +12,12 @@ export default function FinalCta() {
 
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-8">
         <Reveal>
-          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-cream p-3 shadow-lg">
+          <div className="mx-auto w-24 animate-float sm:w-28">
             <Image
-              src="/assets/lola-head.png"
-              alt="LOLA mascot head"
-              width={80}
-              height={80}
+              src="/assets/lola-pointing.png"
+              alt="LOLA pointing upward"
+              width={338}
+              height={560}
               className="h-auto w-full"
             />
           </div>

@@ -40,12 +40,12 @@ export default function Ambassador() {
             </ul>
 
             <Reveal delay={340}>
-              <div className="mt-10 hidden h-32 w-32 items-center justify-center rounded-full bg-cream/95 p-4 shadow-lg lg:flex">
+              <div className="mt-10 hidden w-44 lg:block">
                 <Image
-                  src="/assets/lola-head.png"
-                  alt="LOLA mascot head"
-                  width={128}
-                  height={128}
+                  src="/assets/lola-flag.png"
+                  alt="LOLA planting a yellow flag on a mountain peak"
+                  width={427}
+                  height={560}
                   className="h-auto w-full"
                 />
               </div>
