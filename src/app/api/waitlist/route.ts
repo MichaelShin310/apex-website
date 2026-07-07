@@ -7,8 +7,8 @@ import { NextResponse } from "next/server";
  * Variables for production.
  */
 export async function POST(request: Request) {
-  const apiKey = process.env.KIT_API_KEY;
-  const formId = process.env.KIT_FORM_ID;
+  const apiKey = process.env.KIT_API_KEY?.trim();
+  const formId = process.env.KIT_FORM_ID?.trim();
 
   if (!apiKey || !formId) {
     console.error("Waitlist signup attempted before KIT_API_KEY / KIT_FORM_ID were configured.");
