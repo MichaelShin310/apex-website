@@ -3,7 +3,7 @@ import Reveal from "../Reveal";
 import SectionHeading from "../SectionHeading";
 
 /* TODO: replace placeholder email and social URLs with real accounts. */
-const CONTACT_EMAIL = "hello@joinapex.app";
+const CONTACT_EMAIL = "hello@apexstudent.app";
 
 const SOCIALS = [
   { label: "Instagram", href: "https://instagram.com/apexstudentapp", handle: "@apexstudentapp" },
