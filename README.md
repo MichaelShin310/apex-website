@@ -1,6 +1,6 @@
 # APEX Launch Website
 
-Marketing / launch-list site for **APEX** — the AI-powered student life optimization app — and its mascot **LOLA** (Life Optimization Learning Assistant).
+Marketing site for **APEX** — the AI-powered student life optimization app — and its mascot **LOLA** (Life Optimization Learning Assistant).
 
 Built with **Next.js (App Router) + Tailwind CSS v4**. Fully static, fully responsive, no backend required to run.
 
@@ -20,6 +20,7 @@ src/
     layout.tsx          # Fonts, SEO metadata, Open Graph / Twitter cards
     page.tsx            # Assembles all sections + FAQ JSON-LD schema
     globals.css         # Design tokens (colors, fonts) + animations
+    privacy/page.tsx    # Privacy policy (apexstudent.app/privacy)
     icon.png            # Favicon (generated from the APEX mark)
   components/
     Navbar.tsx          # Sticky nav with mobile menu
@@ -27,7 +28,6 @@ src/
     PhoneFrame.tsx      # Phone mockup shell for app screenshots
     SectionHeading.tsx  # Shared eyebrow/title/description block
     forms/
-      LaunchForm.tsx    # Launch list signup (name, email, school, type)
       AmbassadorForm.tsx
       ContactForm.tsx
     sections/           # One file per page section, top to bottom:
@@ -55,23 +55,21 @@ public/assets/          # Web-optimized images (committed, used by the site)
 2. Run `node scripts/prepare-assets.mjs`.
 3. Done — optimized versions land in `public/assets/`.
 
-## Connecting the forms (TODO before launch)
+## Forms & environment variables
 
-All three forms are frontend-only right now — they show a success state but
-don't store anything. Each form file has a `TODO(backend)` comment where the
-request goes. Easiest paths:
-
-| Option | Effort | Good for |
+| Form | Goes to | Env vars |
 |---|---|---|
-| **Airtable** form/API | ~30 min | Just collecting signups in a table |
-| **Formspree / Web3Forms** | ~15 min | Contact form → your email inbox |
-| **Supabase** table + route handler | ~1–2 h | Real waitlist you'll build on |
-| **ConvertKit / Beehiiv** API | ~1 h | Email marketing to the launch list |
+| Contact | Web3Forms (client-side call) | `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` |
+| Campus ambassador | `/api/ambassador` → Kit form/list | `KIT_API_KEY`, `KIT_AMBASSADOR_FORM_ID` |
 
-Also replace before launch:
-- `siteUrl` in `src/app/layout.tsx` (your real domain)
-- `CONTACT_EMAIL` + social links in `src/components/sections/Contact.tsx`
-- Placeholder testimonial cards in `Community.tsx` once real tester quotes exist
+The launch-list signup was removed when the app went live on the App Store (download
+buttons now link to `APP_STORE_URL` in `src/data/site.ts`). `KIT_FORM_ID` is no longer
+used and can be deleted from Vercel.
+
+Also keep current:
+- `APP_STORE_URL` and `CONTACT_EMAIL` in `src/data/site.ts`
+- Social links in `src/components/sections/Contact.tsx`
+- The privacy policy text in `src/app/privacy/page.tsx` (public at `/privacy`; the app links to it)
 
 ## Deploying on Vercel (free)
 

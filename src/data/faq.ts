@@ -12,8 +12,8 @@ export const FAQ_ITEMS = [
     a: "You upload your syllabus once per class. A PDF or a photo works. LOLA scans it and pulls out the dates that matter: exams, essays, quizzes, and deadlines. Those flow straight into your schedule, organized by course. You can review and edit anything it finds.",
   },
   {
-    q: "Does APEX replace Google Calendar?",
-    a: "No, it works with it. APEX syncs with your existing calendar, so events you already have stay put. What APEX adds is the intelligence layer: deciding when to study, how to break up big deadlines, and how to keep your week balanced.",
+    q: "Does APEX replace my calendar?",
+    a: "No, it works with it. APEX connects to Apple Calendar and Apple Reminders, and it can import your Canvas calendar, so events you already have stay put. What APEX adds is the intelligence layer: deciding when to study, how to break up big deadlines, and how to keep your week balanced.",
   },
   {
     q: "Can I edit the schedule myself?",
@@ -29,19 +29,15 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Is my data private?",
-    a: "Your syllabi and schedule are used for one thing: building your plan. We don't sell personal data, and you can request deletion of your account and data at any time. A full privacy policy will be published at launch.",
+    a: "Your syllabi, schedule, and check-ins are used for one thing: running APEX for you. We don't sell personal data and we don't show ads. Every account can only access its own data, and you can delete your account and everything in it from Settings inside the app. Read the full policy at apexstudent.app/privacy.",
   },
   {
-    q: "When is APEX launching?",
-    a: "APEX is in private beta with early student testers right now. The launch list is the fastest way to know the moment it opens up, and launch list members get access first.",
+    q: "How do I get APEX?",
+    a: "Download APEX Student from the App Store. It works on iPhone and iPad and requires iOS 26.2 or later. Create an account with your email or Sign in with Apple, upload a syllabus, and LOLA builds your first week.",
   },
   {
-    q: "How do I get early access?",
-    a: "Join the launch list on this page. We invite new testers in waves as the beta grows, starting with the earliest signups.",
-  },
-  {
-    q: "Will there be a free version?",
-    a: "Yes. The plan is for the core of APEX to be free for students, with an optional premium tier for advanced features. Early testers will help shape where that line lands.",
+    q: "Is APEX free?",
+    a: "Yes. APEX is free to download and use.",
   },
   {
     q: "What is LOLA?",

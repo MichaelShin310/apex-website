@@ -26,7 +26,8 @@ export default function About() {
               works: irregular, social, and one surprise away from chaos.
             </p>
             <p>
-              So we&apos;re building the tool we wanted. APEX exists so students can do
+              So we built the tool we wanted, and we keep improving it with feedback
+              from the students using it. APEX exists so students can do
               well in school <em className="font-medium not-italic text-ink">and</em> have
               a life, without spending Sunday nights doing damage control. That&apos;s
               the whole mission.

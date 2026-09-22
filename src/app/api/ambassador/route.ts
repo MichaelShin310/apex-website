@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 /**
  * Forwards campus ambassador applications to Kit's dedicated AMBASSADOR FORM
  * (separate from the launch-list form, so it gets its own confirmation
- * email and subscriber list rather than sharing the launch list's).
+ * email and subscriber list rather than mixing with other lists).
  * Runs server-side so KIT_API_KEY never reaches the browser.
  */
 export async function POST(request: Request) {

@@ -36,7 +36,7 @@ const SCREENS = [
   {
     src: "/assets/screen-menu.png",
     caption: "Your toolkit",
-    detail: "GPA tracker, courses, reminders, and the mascot shop.",
+    detail: "GPA tracker, courses, reminders, and settings.",
     alt: "APEX menu screen with efficiency chart, settings, reminders, courses, and GPA tracker",
   },
 ];
@@ -48,7 +48,7 @@ export default function AppPreview() {
         <SectionHeading
           eyebrow="App preview"
           title="A first look inside APEX"
-          description="Real screens from the beta build our student testers are using right now."
+          description="Real screens from the app, live on the App Store."
         />
       </div>
 

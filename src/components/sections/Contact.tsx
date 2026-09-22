@@ -1,9 +1,9 @@
 import ContactForm from "../forms/ContactForm";
 import Reveal from "../Reveal";
+import { CONTACT_EMAIL } from "@/data/site";
 import SectionHeading from "../SectionHeading";
 
-/* TODO: replace placeholder email and social URLs with real accounts. */
-const CONTACT_EMAIL = "hello@apexstudent.app";
+/* TODO: confirm the social handles below are the live accounts. */
 
 const SOCIALS = [
   { label: "Instagram", href: "https://instagram.com/apexstudentapp", handle: "@apexstudentapp" },

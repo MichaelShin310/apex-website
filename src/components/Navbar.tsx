@@ -3,15 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { APP_STORE_URL } from "@/data/site";
 
 const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "LOLA", href: "#lola" },
-  { label: "FAQ", href: "#faq" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Features", href: "/#features" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "LOLA", href: "/#lola" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -37,7 +38,7 @@ export default function Navbar() {
         aria-label="Main navigation"
         className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 sm:px-8"
       >
-        <Link href="#home" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
+        <Link href="/" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
           <Image
             src="/assets/apex-logo.png"
             alt="APEX logo"
@@ -63,10 +64,12 @@ export default function Navbar() {
 
         <div className="hidden lg:block">
           <a
-            href="#join"
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-leaf px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-leaf-deep"
           >
-            Join the Launch List
+            Download the App
           </a>
         </div>
 
@@ -115,11 +118,13 @@ export default function Navbar() {
             ))}
             <li className="pt-2">
               <a
-                href="#join"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
                 className="block rounded-full bg-leaf px-5 py-3 text-center text-base font-semibold text-white"
               >
-                Join the Launch List
+                Download the App
               </a>
             </li>
           </ul>

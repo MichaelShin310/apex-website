@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LaunchForm from "../forms/LaunchForm";
+import AppStoreButton from "../AppStoreButton";
 import PhoneFrame from "../PhoneFrame";
 import Reveal from "../Reveal";
 
@@ -20,7 +20,7 @@ export default function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-leaf opacity-60" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-leaf" />
               </span>
-              Now in private beta · launch list open
+              Now available on the App Store
             </p>
           </Reveal>
 
@@ -40,8 +40,9 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={240}>
-            <div id="join" className="mt-8 max-w-xl rounded-3xl border border-ink/8 bg-paper/80 p-5 shadow-[0_20px_50px_-30px_rgba(13,31,23,0.35)] backdrop-blur-sm sm:p-6">
-              <LaunchForm idPrefix="hero" />
+            <div id="download" className="mt-8 flex flex-wrap items-center gap-4">
+              <AppStoreButton />
+              <p className="text-sm text-slate-soft">Free for iPhone and iPad</p>
             </div>
           </Reveal>
 
@@ -64,7 +65,7 @@ export default function Hero() {
                   <path d="M12 5v14M6 13l6 6 6-6" />
                 </svg>
               </a>
-              <p>Built for students who want more from their time.</p>
+              <p>Built by students, for students who want more from their time.</p>
             </div>
           </Reveal>
         </div>
