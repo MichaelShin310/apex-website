@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s · APEX",
   },
   description:
-    "APEX turns your syllabi, deadlines, and goals into one smart weekly schedule. Meet LOLA, your Life Optimization Learning Assistant. Join the launch list for early access.",
+    "APEX turns your syllabi, deadlines, and goals into one smart weekly schedule. Meet LOLA, your Life Optimization Learning Assistant. Free on the App Store for iPhone and iPad.",
   keywords: [
     "student planner app",
     "AI schedule builder",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "APEX",
     title: "APEX | The AI planner built for student life",
     description:
-      "Upload your syllabus. Get a week that actually works. APEX balances school, social life, and goals. Join the launch list for early access.",
+      "Upload your syllabus. Get a week that actually works. APEX balances school, social life, and goals. Free on the App Store.",
     images: [
       {
         url: "/assets/og.png",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "APEX | The AI planner built for student life",
     description:
-      "Upload your syllabus. Get a week that actually works. Join the APEX launch list.",
+      "Upload your syllabus. Get a week that actually works. Free on the App Store.",
     images: ["/assets/og.png"],
   },
   robots: { index: true, follow: true },

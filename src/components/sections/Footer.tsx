@@ -1,13 +1,16 @@
 import Image from "next/image";
+import { APP_STORE_URL } from "@/data/site";
 
 const FOOTER_LINKS = [
-  { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "LOLA", href: "#lola" },
-  { label: "FAQ", href: "#faq" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-  { label: "Ambassadors", href: "#ambassador" },
+  { label: "Features", href: "/#features" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "LOLA", href: "/#lola" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
+  { label: "Ambassadors", href: "/#ambassador" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Download", href: APP_STORE_URL },
 ];
 
 export default function Footer() {

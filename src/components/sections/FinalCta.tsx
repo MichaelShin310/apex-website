@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LaunchForm from "../forms/LaunchForm";
+import AppStoreButton from "../AppStoreButton";
 import Reveal from "../Reveal";
 
 export default function FinalCta() {
@@ -25,20 +25,20 @@ export default function FinalCta() {
 
         <Reveal delay={100}>
           <h2 className="mt-6 font-display text-3xl font-semibold tracking-tight text-cream sm:text-4xl text-balance">
-            Be early to the student planner that actually understands student life.
+            Get the student planner that actually understands student life.
           </h2>
         </Reveal>
 
         <Reveal delay={180}>
           <p className="mt-4 text-base leading-relaxed text-cream/70 sm:text-lg">
-            Early access opens in waves. The sooner you&apos;re on the list, the sooner
-            LOLA starts planning your week.
+            APEX is live and free on the App Store. Upload a syllabus and LOLA
+            starts planning your week in minutes.
           </p>
         </Reveal>
 
         <Reveal delay={260}>
-          <div className="mx-auto mt-10 max-w-xl rounded-3xl border border-cream/10 bg-cream/5 p-6 text-left sm:p-8">
-            <LaunchForm dark idPrefix="final" />
+          <div className="mt-10 flex justify-center">
+            <AppStoreButton dark />
           </div>
         </Reveal>
       </div>
